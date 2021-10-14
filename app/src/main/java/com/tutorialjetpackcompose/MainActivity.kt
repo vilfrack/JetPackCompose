@@ -15,16 +15,12 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.tutorialjetpackcompose.ui.Componets.CardDemo
 import com.tutorialjetpackcompose.ui.theme.JetPackComposeTheme
 import java.nio.file.WatchEvent
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            CardDemo()
-        }
     }
 }
 
