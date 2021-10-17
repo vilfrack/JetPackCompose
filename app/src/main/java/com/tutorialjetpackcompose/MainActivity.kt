@@ -21,6 +21,9 @@ import java.nio.file.WatchEvent
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent {
+            
+        }
     }
 }
 
