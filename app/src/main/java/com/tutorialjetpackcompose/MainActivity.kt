@@ -21,7 +21,19 @@ import java.nio.file.WatchEvent
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent {
+            Greeting("juan R")
+        }
     }
 }
 
+@Composable
+fun Greeting(name:String){
+    Text(text = "Hello $name")
+}
 
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview(){
+    Greeting("Android R")
+}
