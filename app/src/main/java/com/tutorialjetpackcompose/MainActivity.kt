@@ -85,14 +85,6 @@ fun ImageCard(
                 }
 
             }
-//            Box(
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .padding(100.dp),
-//                contentAlignment = Alignment.TopStart
-//            ) {
-//                Text("Trol",style = TextStyle(color = Color.White,fontSize = 16.sp))
-//            }
         }
     }
 }
@@ -109,3 +101,4 @@ fun ImageCardPreview() {
         ImageCard(painter = painter, contentDescription = description, title = title)
     }
 }
+
