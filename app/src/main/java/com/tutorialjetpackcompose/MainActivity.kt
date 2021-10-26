@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
                 contentAlignment = Alignment.Center,
                 modifier = Modifier.fillMaxSize()
             ) {
-                CircularProgressBar(percentage = 1.1f,number = 100)
+                CircularProgressBar(percentage = 0.1f,number = 1000)
             }
         }
     }
