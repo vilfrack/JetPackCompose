@@ -38,7 +38,6 @@ import com.tutorialjetpackcompose.ui.theme.*
 
 @ExperimentalFoundationApi
 @Composable
-@Preview
 fun HomeScreen() {
     Box(
         modifier = Modifier
@@ -126,6 +125,7 @@ fun BottomMenu(
     }
 }
 
+
 @Composable
 fun BottomMenuItem(
     item: BottomMenuContent,
@@ -159,7 +159,6 @@ fun BottomMenuItem(
         Text(text = item.title, color = if (isSelected) activeTextColor else inactiveTextColor)
     }
 }
-
 @Composable
 fun GreetingSection(
     name: String = "Juan"
