@@ -1,5 +1,7 @@
 package com
 
+import android.util.Log
+
 sealed class Screen(val route:String){
     object MainScreen:Screen("main_screen")
     object DetailScreen:Screen("detail_screen")
@@ -8,7 +10,8 @@ sealed class Screen(val route:String){
         return buildString {
             append(route)
             args.forEach { arg ->
-                append("/$args")
+                Log.d("Screen",arg)
+                append("/$arg")
             }
         }
     }

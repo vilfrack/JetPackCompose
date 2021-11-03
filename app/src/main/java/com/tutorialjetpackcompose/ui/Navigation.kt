@@ -1,5 +1,5 @@
 package com.tutorialjetpackcompose.ui
-
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -23,7 +23,8 @@ fun Navigation() {
         composable(route = Screen.MainScreen.route) {
             MainScreen(navController = navController)
         }
-        composable(route = Screen.DetailScreen.route+"/{name}",
+        composable(
+            route = Screen.DetailScreen.route + "/{name}",
             arguments = listOf(
                 navArgument("name"){
                     type = NavType.StringType
@@ -31,8 +32,9 @@ fun Navigation() {
                     nullable = true
                 }
             )
-        ) { entry ->
-            entry.arguments?.getString("name")?.let { DetailScreen(name = it) }
+        ) {
+            entry ->
+            DetailScreen(name = entry.arguments?.getString("name"))
         }
     }
 }
@@ -44,20 +46,23 @@ fun MainScreen(navController: NavController) {
     }
 
     Column(
-        verticalArrangement = Arrangement.Center,
+        //verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 50.dp)
+            .padding(50.dp)
+
     ) {
         TextField(
             value = text, onValueChange = {
                 text = it
             },
-            modifier = Modifier.height(8.dp)
+            modifier = Modifier.height(100.dp)
         )
         Spacer(modifier = Modifier.height(8.dp))
         Button(
             onClick = {
+                Log.d("TextValue-63",text)
                 navController.navigate(Screen.DetailScreen.withArgs(text))
             },
             modifier = Modifier.align(Alignment.End)
@@ -68,7 +73,10 @@ fun MainScreen(navController: NavController) {
 }
 
 @Composable
-fun DetailScreen(name: String) {
+fun DetailScreen(name: String?) {
+    if (name != null) {
+        Log.d("TextValue-77",name)
+    }
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()

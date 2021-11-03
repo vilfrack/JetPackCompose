@@ -4,16 +4,12 @@ plugins {
 }
 
 android {
-
+    compileSdk 31
 
     defaultConfig {
-        configurations.all {
-            resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
-        }
-        compileSdk 30
         applicationId "com.tutorialjetpackcompose"
         minSdk 26
-        targetSdk 30
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -68,4 +64,5 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
     implementation "androidx.navigation:navigation-compose:2.4.0-alpha10"
+
 }
