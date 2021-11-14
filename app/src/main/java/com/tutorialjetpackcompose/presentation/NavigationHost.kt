@@ -9,7 +9,7 @@ import com.tutorialjetpackcompose.model.user
 import com.tutorialjetpackcompose.presentation.Destination.*
 
 @Composable
-fun NavigationHost(){
+fun NavigationHost(user: user){
     val navController = rememberNavController()
 
     NavHost(navController=navController, startDestination =  Pantalla1.route){
